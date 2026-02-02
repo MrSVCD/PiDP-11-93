@@ -23,6 +23,7 @@ difference(){
         translate([-25.4*0.625,0]) color("green") cube([25.4*10,25.4*1.75,25.4*0.1]);
         translate([0.2,0,0]) cube([(25.4*8.75)-0.4,25.4*1.75,18.6]);
     }
+
     //Mounting holes for 10inch rack
     for(j=[0,8.75+(5/8)]) for(i=[2,7,12]){
         translate([(-5/16*25.4)+(j*25.4),i/8*25.4]) hull(){
@@ -56,10 +57,12 @@ difference(){
 
     //Raspberry PI sized cutout with heat insert for M3 screws.
     translate([25.4*4.5,25.4*0.25]){
+        //Heat insert holes.
         for(j=[-0.25,3.75]) for(i=[2,7,12]) translate([25.4*j,((i/8)-0.25)*25.4]){
             cylinder(h=0.4,d1=5.2,d2=4.4);
             cylinder(h=25.4,d=4.4);
         }
+        //The square cutout.
         cube([3.5*25.4,1.25*25.4,25.4]);
     }
 }
